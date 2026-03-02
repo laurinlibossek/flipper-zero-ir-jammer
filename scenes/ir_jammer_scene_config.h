@@ -1,0 +1,1 @@
+ADD_SCENE(ir_jammer, scene_1, Scene_1)

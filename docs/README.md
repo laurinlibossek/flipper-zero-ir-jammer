@@ -1,6 +1,6 @@
-## Boilerplate
+## IrJammer
 
-Boilerplate for a Flipper Zero application, you can use this code as a starting point for developing your own app. 
+IrJammer for a Flipper Zero application, you can use this code as a starting point for developing your own app. 
 ### Features
 - Start Screen
 - Menu

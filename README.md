@@ -1,60 +1,37 @@
-# Flipper Zero FAP Boilerplate
+# Flipper Zero IR Jammer
 
-## What this is?
-Use this code as a foundation for developing Flipper Zero Applications, change the contents of this file when developing a new project
-<br><br>
+Hey there! Welcome to my IR Jammer project for the Flipper Zero. 🐬
+
+I built this little application by adapting existing IR protocols and giving it a clean, stripped-down, easy-to-use interface. If you're familiar with the Flipper's native IR capabilities, this takes it a step further by focusing entirely on automated transmission routines (jamming) across common frequencies. 
 
 ### Features
-- Start Screen
-- Menu
-- Button Menu
-- File Browser
-- Text Input
-- Number Input
-- Different Scenes / Views
-- Settings Page (On/Off for haptics, sound, led)
-- Handling of Button Inputs
-- Handling of Tick events
-- Handling of Enter/Exit events
-- Rendering to GUI
-- Haptic Feedback 
-- Sound Effects
-- LED Effects
-- Dolphin Deeds (make dolphin happy)
-- Storage (Saves settings)
 
-## How to install on Flipper Zero
-- If you do not have one, download a firmware<br>
-- Plug your Flipper Zero in via USB. <br>
-- Copy the contents of this folder into the applications_user folder of your firmware. <br> 
+This app currently comes packed with a handful of modes depending on what you're trying to achieve:
 
-Then run the command: 
- ```
-.\fbt launch_app APPSRC=applications_user/<your_app_name>
- ```
-The application will be compiled and copied onto your device. 
+- **BASIC:** Your bread-and-butter mode. It rapidly sends common, fixed infrared marks that are highly reliable across most systems.
+- **ENHANCED:** A slightly more aggressive version that tweaks the mark and space timings for fine-tuning your target.
+- **SWEEP:** Slowly sweeps and shifts between boundary timings to effectively break signal synchronization.
+- **RANDOM:** Blasts out continuous random IR pulses. Great for fooling smart TVs and modern AC units that might ignore basic repetitive noise!
+- **EMPTY:** Very minimal gaps. It's efficient, extremely tight, but mostly experimental.
 
-## Licensing
-This code is open-source and may be used for whatever you want to do with it. 
+You also get full control over **Density**. Basically, dialing up the density parameter controls exactly how tightly packed these jamming bursts are transmitted out of your Flipper's infrared bulb. 
 
-## Thank you notes
-- [Roguemaster](https://github.com/RogueMaster/flipperzero-firmware-wPlugins) for distributing the boilerplate 
-- [Flipc](flipc.org) for distributing the boilerplate
-- [Nikita Vostokov](https://github.com/wosk) for code contributions
-- [Alexander Rodriguez](https://github.com/squee72564) for code contributions
-- [derskythe](https://github.com/derskythe) for code contributions
+### Navigating the App
 
-## Some cool projects I found using this 
-(love seeing it being used. Let me know if you want yours added)<br>
+The UI is built to be clean and simple:
+*   Use the **Up/Down** buttons to scroll between Settings (Status, Freq, Mode, Density, Info).
+*   Use the **Left/Right** buttons to alter those settings or view the Info menu.
+*   Once highlighting the `Status` setting, simply hit the **Right** or **OK** button to toggle the transmission `ACTIVE` or `PAUSED`.
+*   Take a look inside the `Info` menu for a scrollable rundown of the modes and everything they do natively. 
 
-- [Flipper Zero Evil Portal](https://github.com/bigbrodude6119/flipper-zero-evil-portal) by [bigbrodude6110](https://github.com/bigbrodude6119)
-- [Flipper Chess](https://github.com/xtruan/flipper-chess) by [xtruan](https://github.com/xtruan)
-- [Crypto toolkit for Flipper Zero](https://github.com/xtruan/FlipBIP) by [xtruan](https://github.com/xtruan)
-- [Camera Suite](https://github.com/CodyTolene/Flipper-Zero-Camera-Suite) by [Cody Tolene](https://github.com/CodyTolene)
-- [Minesweeper](https://github.com/squee72564/F0_Minesweeper_Fap) by [Alexander Rodriguez](https://github.com/squee72564)
-- [Guess the Number](https://github.com/kWAYTV/guess-the-number-fz) by [kWAY](https://github.com/kWAYTV)
-- [Flipper Tag](https://github.com/thejudge156/flippertag) by [The Judge](https://github.com/thejudge156)
-- [Flipper Enigma Machine Emulator](https://github.com/xtruan/flipper-enigma)
-- [Color Guess](https://github.com/leedave/Leeds-Flipper-Zero-Applications/tree/main/Games/color_guess) by me
-- [Cross Remote](https://github.com/leedave/Leeds-Flipper-Zero-Applications/tree/main/Tools/xremote) by me
-- [Restaurant Pager Trigger](https://github.com/leedave/flipper-zero-meal-pager) by me
+### Building for your Flipper
+
+This app sits entirely inside standard `furi` and `furi_hal` structures!
+
+To build it yourself:
+1. Make sure you have `ufbt` (micro Flipper Build Tool) installed and configured on your machine.
+2. Clone this repo: `git clone https://github.com/laurinlibossek/flipper-zero-ir-jammer.git`
+3. Enter the project folder and simply run the command: `ufbt`
+4. Deploy the `.fap` directly onto your Flipper, and you're good to go!
+
+Thanks for checking out the project. Let me know if you discover any fun results from the Random mode out in the wild!
