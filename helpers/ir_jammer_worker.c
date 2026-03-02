@@ -1,5 +1,6 @@
 #include "ir_jammer_worker.h"
 #include <furi_hal_infrared.h>
+#include <furi_hal_light.h>
 
 struct IrJammerWorker {
     FuriThread* thread;
@@ -82,8 +83,10 @@ static int32_t ir_jammer_worker_thread(void* context) {
 
         worker->current_level = true;
 
+        furi_hal_light_set(LightGreen, 0xFF);
         furi_hal_infrared_async_tx_start(worker->freq, 0.33);
         furi_hal_infrared_async_tx_wait_termination();
+        furi_hal_light_set(LightGreen, 0x00);
 
         worker->jamCount++;
 
@@ -146,6 +149,7 @@ void ir_jammer_worker_stop(IrJammerWorker* worker) {
         worker->running = false;
         furi_thread_flags_set(furi_thread_get_id(worker->thread), 1);
         furi_thread_join(worker->thread);
+        furi_hal_light_set(LightGreen, 0x00);
     }
 }
 
