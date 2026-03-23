@@ -5,7 +5,8 @@
 id: ir_jammer
 name: IR Jammer
 category: Infrared
-description: A powerful IR Jammer with multiple modes and density control.
+description: Infrared jamming application with multiple modes and density control.
+
 author: laurinlibossek
 sourcecode:
   type: git
