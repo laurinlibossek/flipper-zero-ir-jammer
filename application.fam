@@ -12,6 +12,9 @@ App(
     order=10,
     fap_icon="icons/ir_jammer_10px.png",
     fap_icon_assets="icons",
-    fap_category="Misc",
+    fap_category="Infrared",
     fap_version="1.3",
+    fap_author="laurinlibossek",
+    fap_weburl="https://github.com/laurinlibossek/flipper-zero-ir-jammer",
+    fap_description="A powerful IR Jammer with multiple modes and density control.",
 )

@@ -1,0 +1,17 @@
+# This manifest is for the Flipper Application Catalog submission.
+# Copy this content when creating your Pull Request on:
+# https://github.com/flipperdevices/flipper-application-catalog
+
+id: ir_jammer
+name: IR Jammer
+category: Infrared
+description: A powerful IR Jammer with multiple modes and density control.
+author: laurinlibossek
+sourcecode:
+  type: git
+  location:
+    origin: https://github.com/laurinlibossek/flipper-zero-ir-jammer
+    commit: main  # Replace with a specific commit SHA or tag for a stable release
+changelog: CHANGELOG.md
+# gallery:
+#   - screenshots/screen1.png  # Recommended: Add screenshots later

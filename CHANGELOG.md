@@ -1,3 +1,5 @@
+# Changelog
+
 ## 1.3
 - Requires version 0.105.0 or higher (or fw based on version)
 - Added Text Input Example

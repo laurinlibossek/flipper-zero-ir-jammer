@@ -34,4 +34,9 @@ To build it yourself:
 3. Enter the project folder and simply run the command: `ufbt`
 4. Deploy the `.fap` directly onto your Flipper, and you're good to go!
 
+### Publishing to Flipper App Store
+
+This repository is prepared for submission to the [Flipper Application Catalog](https://github.com/flipperdevices/flipper-application-catalog). 
+If you want to contribute, follow the instructions in [catalog_manifest.yml](./catalog_manifest.yml).
+
 Thanks for checking out the project. Let me know if you discover any fun results from the Random mode out in the wild!
